@@ -1,0 +1,23 @@
+# dependency
+node_modules/
+
+# build output
+dist/
+
+# version contril
+.git/
+
+# in case you are running on mac..
+.DS_Store
+
+# project-wide vscode configs
+.vscode/
+
+# env
+.env
+
+# tests
+test/
+
+# git scripts 
+.github/

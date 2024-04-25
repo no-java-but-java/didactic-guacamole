@@ -1,0 +1,23 @@
+{
+  "name": "slack-bot-ts",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "repository": "https://github.com/no-java-but-java/slack-bot-ts.git",
+  "author": "no-java-but-java",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "build:watch": "tsc -w -p .",
+    "start": "npm run build && node dist/app.js",
+    "start:light": "ts-node src/app.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.17.1",
+    "dotenv": "^16.4.5"
+  }
+}
