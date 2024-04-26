@@ -1,16 +1,19 @@
 import './utils/env'
 
 import { App, LogLevel } from '@slack/bolt'
+import { EnvConfigs } from './utils/env'
 
 const app = new App({
-  token: process.env.SLACK_BOT_OAUTH_TOKEN,
-  signingSecret: process.env.SLACK_SIGNING_SECRET,
+  token: EnvConfigs.TOKEN,
+  signingSecret: EnvConfigs.SIGNING_SECRET,
   logLevel: LogLevel.DEBUG,
 })
 
 ;(async () => {
   // Start your app
-  await app.start(Number(process.env.PORT) || 3000)
+  await app.start(EnvConfigs.PORT)
 
-  console.log('⚡️ Bolt app is running!')
+  console.log(
+    `⚡️ Bolt app is running on ${EnvConfigs.ENV} server, port: ${EnvConfigs.PORT}!`,
+  )
 })()
